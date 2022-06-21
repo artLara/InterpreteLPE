@@ -1,0 +1,17 @@
+G:
+	clear z1;
+H:
+	incr x1;
+	
+pred:
+	G
+	aux<-x1;
+	clear x1;
+	while aux != 0 do;
+		z1 <- x1;
+		H
+		decr aux;
+	end;
+
+x1 <- 0;
+pred

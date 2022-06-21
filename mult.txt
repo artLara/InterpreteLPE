@@ -1,0 +1,19 @@
+G:
+	clear z1;
+	
+mult:
+	G
+	aux<-x2;
+	clear x2;
+	while aux != 0 do;
+		aux2 <- x2;
+		x2 <- z1;
+		suma
+		x2 <- aux2;
+		incr x2;
+		decr aux;
+	end;
+
+x1 <- 9;
+x2 <- 9;
+mult

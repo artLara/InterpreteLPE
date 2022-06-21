@@ -1,0 +1,20 @@
+G:
+	z1<-x1;
+H:
+	z1<-x3;
+	incr z1;
+	
+suma:
+	G
+	aux<-x2;
+	clear x2;
+	while aux != 0 do;
+		x3 <- z1;
+		H
+		incr x2;
+		decr aux;
+	end;
+
+x1 <- 3;
+x2 <- 2;
+suma
