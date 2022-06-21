@@ -1,0 +1,26 @@
+G:
+	aux1 <- x1;
+	aux2 <- x2;
+	x1 <- x3;
+	mult
+	x1 <- z1;
+	suma
+	x2 <- z1;
+	x1 <- aux1;
+	incr x1;
+	monus
+	x1 <- aux1;
+	x2 <- aux2;
+
+div:
+	clear x3;
+	G
+	while z1 != 0 do;
+		incr x3;
+		G
+	end;
+	z1 <- x3;
+
+x1 <- 95;
+x2 <- 7;
+div

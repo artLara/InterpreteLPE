@@ -19,7 +19,6 @@ def H_suma():
 	global z1
 	global z2
 	global z3
-	z1 = x3
 	z1 += 1
 def suma():
 	global x1
@@ -32,11 +31,10 @@ def suma():
 	aux = x2
 	x2 = 0
 	while aux != 0:
-		x3  =  z1
 		H_suma()
 		x2 += 1
 		aux -= 1
-x1  =  3
-x2  =  2
+x1  =  95
+x2  =  1
 suma()
 print(z1)
