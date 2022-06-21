@@ -1,0 +1,33 @@
+G:
+	clear z1;
+
+coc:
+	G
+	ox1 <- x1;
+	ox2 <- x2;
+	aux <- x1;
+	clear auxC;
+	clear countX;
+	while aux != 0 do;
+		x2 <- ox2;
+		x1 <- auxC;
+		mult
+		x1 <- z1;
+		suma
+		x2 <- z1;
+		x1 <- countX;
+		incr x1;
+		eq
+		x2 <- z1;
+		x1 <- auxC;
+		suma
+		x1 <- ox1;
+		x2 <- ox2;
+		auxC <- z1;
+		incr countX;
+		decr aux;
+	end;
+
+x1 <- 0;
+x2 <- 1;
+coc
