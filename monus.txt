@@ -1,0 +1,21 @@
+G:
+	z1 <- x1;
+H:
+	pred
+	
+monus:
+	G
+	aux <- x2;
+	clear x2;
+	aux1 <- x1;
+	while aux != 0 do;
+		x1 <- z1;
+		H
+		x1 <- aux1;
+		incr x2;
+		decr aux;
+	end;
+
+x1 <- 3;
+x2 <- 2;
+monus

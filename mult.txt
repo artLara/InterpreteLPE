@@ -1,6 +1,8 @@
 G:
 	clear z1;
-	
+
+H:
+	suma
 mult:
 	G
 	aux<-x2;
@@ -8,7 +10,7 @@ mult:
 	while aux != 0 do;
 		aux2 <- x2;
 		x2 <- z1;
-		suma
+		H
 		x2 <- aux2;
 		incr x2;
 		decr aux;

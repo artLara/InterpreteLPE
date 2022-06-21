@@ -1,0 +1,25 @@
+eq:
+	clear z1;
+	ox1 <- x1;
+	ox2 <- x2;
+	monus
+	res1 <- z1;
+	x1 <- x2;
+	x2 <- ox1;
+	monus
+	res2 <- z1;
+	x1 <- res1;
+	x2 <- res2;
+	suma
+	res3 <- z1;
+	clear uno;
+	incr uno;
+	x1 <- uno;
+	x2 <- res3;
+	monus
+	x1 <- ox1;
+	x2 <- ox2;
+
+x1 <- 7;
+x2 <- 7;
+eq

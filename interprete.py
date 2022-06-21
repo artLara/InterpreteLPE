@@ -23,6 +23,7 @@ def analyzer(path='mult.txt', external=False, verbose = False):
 	name = path.split('.')[0]
 	variables = set()
 	functions_names = set()
+	external_function_names = set()
 	constants = set()
 	identation = 0
 	body = 'x1 = 0\n'
@@ -58,6 +59,11 @@ def analyzer(path='mult.txt', external=False, verbose = False):
 
 				elif line.find('<') != -1: #Asignacion de variables
 					aux = line.rstrip().split('<')
+					if aux[1][len(aux[1])-1] != ';':
+						print('Error: ";" no encontrado en la línea', index+1)
+						error = True
+						break
+
 					varDest = aux[0]
 					varOrig = aux[1][1:len(aux[1])-1]
 					body += varDest + ' = ' + varOrig + '\n'
@@ -135,7 +141,7 @@ def analyzer(path='mult.txt', external=False, verbose = False):
 					aux = deleteTabs(line)
 					if aux in functions_names or aux + '_'+name in functions_names:
 						tabs = re.findall("\t", line)
-						if aux != name:
+						if aux != name and aux not in external_function_names:
 							aux += '_'+name
 						for i in tabs:
 							aux = i + aux
@@ -144,9 +150,10 @@ def analyzer(path='mult.txt', external=False, verbose = False):
 
 					elif isExternalFunction(aux):
 						functions_names.add(aux)
+						external_function_names.add(aux)
 						ext = analyzer(aux+'.txt', external=True)
 						if ext == None:
-							print('Error en la funcion externa'+aux)
+							print('Error en la funcion externa: '+aux)
 
 						body = ext + body
 						tabs = re.findall("\t", line)
